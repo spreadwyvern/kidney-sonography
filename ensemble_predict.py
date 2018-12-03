@@ -55,6 +55,7 @@ def predict_egfr(FLAG):
     os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
     os.environ["CUDA_VISIBLE_DEVICES"] = FLAG.gpu_id 
     torch.cuda.set_device(0)
+    
     # specify dtype
     use_cuda = torch.cuda.is_available()
     print("use GPU: {}".format(use_cuda))
@@ -63,8 +64,10 @@ def predict_egfr(FLAG):
     else:
         dtype = torch.FloatTensor
     print("numbers of GPU: {}".format(torch.cuda.device_count()))
-     # normalization of image
+    
+    # normalization of image
     transformations = transforms.Compose([transforms.ToTensor(), transforms.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))])
+    
     while True:
         img_path = input('Input image path: ')
         try:
