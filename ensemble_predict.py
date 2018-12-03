@@ -43,7 +43,7 @@ import argparse
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-g', '--gpu_id', type=str, default='0', help='GPU ID')
-    parser.add_argument('-p', '--img_path', type=str, default='', help='img_path')
+    # parser.add_argument('-p', '--img_path', type=str, default='', help='img_path')
 
     FLAG = parser.parse_args()
 
