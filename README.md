@@ -5,9 +5,9 @@ kidney function classification and prediction through ultrasound-based kidney im
 ## Prediction module
 Ensembles 10 trained models to predict estimated glomerular filtration rate (eGFR).
 ### Tutorial
-1. Run get_models.sh to retrieve 10 trained model weights. (Warning! The file size is about 1.7 GB.)
+1. Run get_models.sh to retrieve 10 trained model weights. (Warning! The file size is about 1.7 GB).
 2. Execute ensemble_predict.py
-3. Input file path to a cropped kidney sonography.
+3. Input file path to a cropped kidney sonography. Sample images are provided in "/sample_images".
 
 Use --help to see usage of ensemble_predict.py:
 ```
