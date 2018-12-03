@@ -9,11 +9,10 @@ Ensembles 10 trained models to predict estimated glomerular filtration rate (eGF
 2. Execute ensemble_predict.py
 3. Input file path to a cropped kidney sonography.
 
-Use --help to see usage of ensemble_predict.py
-'''
-usage: ensemble_predict.py [-h] [-g]
+Use --help to see usage of ensemble_predict.py:
 
-optional arguments:
--h, --help    show help message and exit
--g, --gpu_id  assign GPU ID, default 0
-'''
+> usage: ensemble_predict.py [-h] [-g]
+>
+> optional arguments:
+> -h, --help    show help message and exit
+> -g, --gpu_id  assign GPU ID, default 0
