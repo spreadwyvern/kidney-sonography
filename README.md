@@ -7,7 +7,7 @@ Ensembles 10 trained models to predict estimated glomerular filtration rate (eGF
 ### Tutorial
 1. Run get_models.sh to retrieve 10 trained CNN model weights and 10 trained XGBoost models. (Warning! The file size is about 1.7 GB).
 2. Execute ensemble_predict.py
-3. Input file path to a cropped kidney sonography. Sample images are provided in "/sample_images".
+3. Input file path to a cropped kidney sonography. The images whould be 224 x 224 and cropped with tailor-cropped method.
 
 Use --help to see usage of ensemble_predict.py:
 ```
