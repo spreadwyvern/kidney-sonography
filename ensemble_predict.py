@@ -1,38 +1,28 @@
 
 # coding: utf-8
 
-import torch
-from torch.autograd import Variable
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-from torch.optim import lr_scheduler
-import torchvision
-import torchvision.transforms as transforms
-import torchvision.models as models
-from torch.utils.data import sampler, TensorDataset, Dataset
-import torch.utils.model_zoo as model_zoo
 
-from sklearn import metrics
-import itertools
-import math
+
+# from sklearn import metrics
+# import itertools
+# import math
 import os
 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
-import numpy as np
-from imgaug import augmenters as iaa
-import imgaug as ia
+# import numpy as np
+# from imgaug import augmenters as iaa
+# import imgaug as ia
 import pandas as pd
-from pandas import Series
-import random
-import scipy
-import time
+# from pandas import Series
+# import random
+# import scipy
+# import time
 import cv2
 from PIL import Image, ImageOps, ImageEnhance
 
-from scipy.stats.stats import pearsonr
-from sklearn.metrics import mean_absolute_error, r2_score
+# from scipy.stats.stats import pearsonr
+# from sklearn.metrics import mean_absolute_error, r2_score
 from utils.plot import plot_losses, plot_making, relative_error, loss_generator
 from utils.generator import kidney_Dataset
 from utils.model import freeze_blocks_resnet, CNN
@@ -45,7 +35,7 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-g', '--gpu_id', type=str, default='0', help='GPU ID')
+    parser.add_argument('-g', '--gpu_id', type=str, default="0", help='GPU ID')
     # parser.add_argument('-p', '--img_path', type=str, default='', help='img_path')
 
     FLAG = parser.parse_args()
@@ -57,9 +47,21 @@ def main():
 
 def predict_kidney(FLAG):
     os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-    os.environ["CUDA_VISIBLE_DEVICES"] = FLAG.gpu_id 
-    torch.cuda.set_device(0)
+    os.environ["CUDA_VISIBLE_DEVICES"] = FLAG.gpu_id
+    # print(os.environ["CUDA_VISIBLE_DEVICES"])
+    import torch
+    from torch.autograd import Variable
+    import torch.nn as nn
+    import torch.nn.functional as F
+    import torch.optim as optim
+    from torch.optim import lr_scheduler
+    import torchvision
+    import torchvision.transforms as transforms
+    import torchvision.models as models
+    from torch.utils.data import sampler, TensorDataset, Dataset
+    import torch.utils.model_zoo as model_zoo
     
+    torch.cuda.set_device(0)
     # specify dtype
     use_cuda = torch.cuda.is_available()
     print("use GPU: {}".format(use_cuda))
@@ -68,6 +70,7 @@ def predict_kidney(FLAG):
     else:
         dtype = torch.FloatTensor
     print("numbers of GPU: {}".format(torch.cuda.device_count()))
+    # print(os.environ["CUDA_VISIBLE_DEVICES"])
     
     # normalization of image
     transformations = transforms.Compose([transforms.ToTensor(), transforms.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))])
@@ -83,10 +86,10 @@ def predict_kidney(FLAG):
             continue
         else:
 
-            if 'models' not in locals():
+            if 'cnn_models' not in locals():
                 print("loading trained models...")
                 # create models dict
-                models = {}
+                cnn_models = {}
                 extract_models = {}
                 # model directory 
                 model_dir = 'models/'
@@ -99,8 +102,8 @@ def predict_kidney(FLAG):
 
                     extract_CNN = nn.Sequential(*list(net.module.base_model.children())[:-1]).type(dtype)
                     extract_net = torch.nn.DataParallel(extract_CNN)
-                    print("loaded model {}/10\r".format(i))
-                    models["model_{}".format(i)] = net
+                    print("loaded model {}/10".format(i), end = '\r')
+                    cnn_models["model_{}".format(i)] = net
                     extract_models["extract_model_{}".format(i)] = extract_net
                     del net
                 print("loaded trained CNN models")
@@ -119,18 +122,18 @@ def predict_kidney(FLAG):
             else:
                 print("XGBoost models already loaded")
 
-            egfr = predict_egfr(img, models)
+            egfr = predict_egfr(img, cnn_models)
             print("Predictred eGFR: {}".format(egfr))
             ckd_stage = predict_ckd(img, extract_models, xgb_models)
             print("Predicted CKD stage < III: {:.2f}%".format(ckd_stage*100))
                     
 
-def predict_egfr(input_img, models):
+def predict_egfr(input_img, cnn_models):
     pred = []
     
     print("predicting egfr...")    
     for i in range(10):
-        test_pred = models["model_{}".format(i)].eval()(input_img)
+        test_pred = cnn_models["model_{}".format(i)].eval()(input_img)
         test_pred = test_pred.data.cpu().numpy()
         pred.append(test_pred)
         print("prediction {}/10 completed".format(i+1), end="\r")
