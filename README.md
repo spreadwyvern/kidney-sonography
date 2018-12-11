@@ -1,13 +1,39 @@
 # kidney-sonography
-## Introduction
-kidney function classification and prediction through ultrasound-based kidney imaging: from deep learning to mass screening of chronic kidney disease
+Towards the Automation of Kidney Function Classification and Prediction Through Ultrasound-based Kidney Imaging Using Deep Learning
 
 ## Prediction module
-Ensembles 10 trained models to predict estimated glomerular filtration rate (eGFR).
-### Tutorial
+This repository contains the code of the prediction model used in the submitted paper Towards the Automation of Kidney Function Classification and Prediction Through Ultrasound-based Kidney Imaging Using Deep Learning.
+The propsed automated system ensembles 10 trained models to predict estimated glomerular filtration rate (eGFR), and 10 trained gradient-boosted tree models to classify CKD stage.
+
+### Dependencies
+This work uses Python 3.5.2. Before running the code, you have to install the following.
+- torch==0.2.0_3
+- torchvision==0.2.1
+- pandas==0.20.3
+- numpy==1.15.3
+- xgboost==0.72
+- opencv-python==3.4.0
+- Pillow==5.1.0
+The above dependencies can be installed using pip by running:
+```
+pip install -r requirement.txt
+```
+
+### Usage
 1. Run get_models.sh to retrieve 10 trained CNN model weights and 10 trained XGBoost models. (Warning! The file size is about 1.7 GB).
+```
+bash get_models.sh
+```
 2. Execute ensemble_predict.py
+```
+python3 ensemble_predict.py
+```
 3. Input file path to a cropped kidney sonography. The images whould be 224 x 224 and cropped with tailor-cropped method.
+```
+use GPU: True
+numbers of GPU: 1
+Input image path:
+```
 
 Use --help to see usage of ensemble_predict.py:
 ```
