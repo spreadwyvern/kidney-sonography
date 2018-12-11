@@ -13,6 +13,7 @@ This work uses Python 3.5.2. Before running the code, you have to install the fo
 - xgboost==0.72
 - opencv-python==3.4.0
 - Pillow==5.1.0
+
 The above dependencies can be installed using pip by running:
 ```
 pip install -r requirement.txt
