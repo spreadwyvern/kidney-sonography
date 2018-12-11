@@ -1,4 +1,7 @@
 torch==0.2.0_3
 torchvision==0.2.1
 pandas==0.20.3
+numpy==1.15.3
 xgboost==0.72
+opencv-python==3.4.0
+Pillow==5.1.0
