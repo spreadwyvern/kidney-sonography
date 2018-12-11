@@ -1,8 +1,7 @@
-# kidney-sonography
-Towards the Automation of Kidney Function Classification and Prediction Through Ultrasound-based Kidney Imaging Using Deep Learning
+# Towards the Automation of Kidney Function Classification and Prediction Through Ultrasound-based Kidney Imaging Using Deep Learning
 
 ## Prediction module
-This repository contains the code of the prediction model used in the submitted paper Towards the Automation of Kidney Function Classification and Prediction Through Ultrasound-based Kidney Imaging Using Deep Learning.
+This repository contains the code of the prediction model used in the submitted paper **Towards the Automation of Kidney Function Classification and Prediction Through Ultrasound-based Kidney Imaging Using Deep Learning**.
 The propsed automated system ensembles 10 trained models to predict estimated glomerular filtration rate (eGFR), and 10 trained gradient-boosted tree models to classify CKD stage.
 
 ### Dependencies
@@ -28,13 +27,13 @@ bash get_models.sh
 ```
 python3 ensemble_predict.py
 ```
-3. Input file path to a cropped kidney sonography. The images whould be 224 x 224 and cropped with tailor-cropped method.
+3. Input file path to a cropped kidney sonography. The images whould be 224 x 224 and cropped with tailor-cropped method mentioned in the paper.
 ```
 use GPU: True
 numbers of GPU: 1
 Input image path:
 ```
-
+4. First time running will required loading the trained models, then the script shall return the predicted eGFR and the possibility of the subject's CKD stage being over stage III.
 Use --help to see usage of ensemble_predict.py:
 ```
 usage: ensemble_predict.py [-h] [-g]
