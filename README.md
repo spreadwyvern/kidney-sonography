@@ -36,6 +36,7 @@ Input image path:
 ```
 4. First time running will required loading the trained models, then the script shall return the predicted eGFR and the possibility of the subject's CKD stage being over stage III.
 
+### Help
 Use --help to see usage of ensemble_predict.py:
 ```
 usage: ensemble_predict.py [-h] [-g]
