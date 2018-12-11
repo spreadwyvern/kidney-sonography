@@ -93,7 +93,7 @@ def predict_kidney(FLAG):
             egfr = predict_egfr(img, cnn_models)
             print("Predictred eGFR: {}".format(egfr))
             ckd_stage = predict_ckd(img, extract_models, xgb_models)
-            print("Predicted CKD stage < III: {:.2f}%".format(ckd_stage*100))
+            print("Predicted CKD stage > II: {:.2f}%".format(ckd_stage*100))
                     
 
 def predict_egfr(input_img, cnn_models):
