@@ -5,7 +5,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from kidney import *
 from model import Model
-
+import iconQRC
 
 class WorkerSignals(QObject):
     '''
@@ -192,7 +192,9 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
 
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
+    app = QApplication([])
     myWin = MyMainWindow()
     myWin.show()
-    sys.exit(app.exec_())
+    app.setWindowIcon(QIcon(':kidney.ico'))
+    myWin.setWindowIcon(QIcon(':kidney.ico'))
+    app.exec_()

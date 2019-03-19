@@ -1,8 +1,12 @@
 # Towards the Automation of Kidney Function Classification and Prediction Through Ultrasound-based Kidney Imaging Using Deep Learning
 
+
 ## Prediction module
 This repository contains the code of the prediction model used in the submitted paper **Towards the Automation of Kidney Function Classification and Prediction Through Ultrasound-based Kidney Imaging Using Deep Learning**.
 The propsed automated system ensembles 10 trained models to predict estimated glomerular filtration rate (eGFR), and 10 trained gradient-boosted tree models to classify CKD stage.
+
+- 2019.03.19
+Added GUI of the prediction module. See below for instructions.
 
 ### Dependencies
 This work uses Python 3.5.2. Before running the code, you have to install the following.
@@ -45,3 +49,19 @@ optional arguments:
 -h, --help    show help message and exit
 -g, --gpu_id  assign GPU ID, default 0
 ```
+
+## GUI
+For ease of future clinical use, added a GUI for the predictiom module.
+
+### Usage
+1. Run get_models.sh to retrieve 10 trained CNN model weights and 10 trained XGBoost models. (Warning! The file size is about 1.7 GB).
+```
+bash get_models.sh
+```
+2. Execute predict.py
+```
+python3 predict.py
+```
+
+### Demonstration Video
+<iframe src="https://drive.google.com/file/d/1ZA_Six_tb08KlZSlzHtbEbx7K01fn_xA/preview" width="640" height="480"></iframe>
