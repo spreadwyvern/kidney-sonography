@@ -65,3 +65,13 @@ python3 predict.py
 
 ### Demonstration Video
 [![Video](GUI.jpg)](https://drive.google.com/file/d/1ZA_Six_tb08KlZSlzHtbEbx7K01fn_xA/preview)
+
+### Windows distribution
+Executable application for Windows environment.
+Dowload and extract, execute 'RenalFnXNet.exe'.
+
+[Full model version](https://drive.google.com/file/d/1Z8sPhdyFDz90-AZOTdenYmC8xNrQSK0C/view?usp=sharing)
+Requires GPU with 4GB of RAM
+
+[Lite version with 5-model ensembling](https://drive.google.com/file/d/1ZCcpfp17kTvy3AVVxPYp78C-gHUk-jUG/view?usp=sharing)
+Requires GPU with 2GB of RAM
