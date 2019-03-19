@@ -64,6 +64,4 @@ python3 predict.py
 ```
 
 ### Demonstration Video
-<video width="640" height="480" controls>
-  <source src="demo_short.mp4" type="video/mp4">
-</video>
+[![Video](GUI.jpg)](https://drive.google.com/file/d/1ZA_Six_tb08KlZSlzHtbEbx7K01fn_xA/preview)
