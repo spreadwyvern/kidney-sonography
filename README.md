@@ -2,7 +2,7 @@
 
 
 ## Prediction module
-This repository contains the code of the prediction model used in the paper **Automation of the Kidney Function Prediction and Classification Through Ultrasound-based Kidney Imaging Using Deep Learning**. The paper is accepted by npj Digital Medicine.
+This repository contains the code of the prediction model used in the paper **Automation of the Kidney Function Prediction and Classification Through Ultrasound-based Kidney Imaging Using Deep Learning**. The paper has been accepted by npj Digital Medicine.
 The propsed automated system ensembles 10 trained models to predict estimated glomerular filtration rate (eGFR), and 10 trained gradient-boosted tree models to classify CKD stage.
 Go to [project blog post](https://spreadwyvern.github.io/projects/kidney/egfr/) for more information.
 
