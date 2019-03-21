@@ -68,8 +68,9 @@ python3 predict.py
 [![Video](GUI.jpg)](https://drive.google.com/file/d/1ZA_Six_tb08KlZSlzHtbEbx7K01fn_xA/preview)
 
 ### Windows distribution
-Executable application for Windows environment.
-Dowload and extract, execute 'RenalFnXNet.exe'.
+Executable application for Windows environment. The full model version utilizes the 10-model-ensemble model used in our paper, it requires a nVidia GPU with 4GB VRAM. There is also a lite version with 5-model ensemble which requires 2GB VRAM, suitable for entry-level GPUs, yet at a cost of performance.
+#### Usage
+Dowload the file below and extract. Execute 'RenalFnXNet.exe'.
 
 [Full model version](https://drive.google.com/file/d/1Z8sPhdyFDz90-AZOTdenYmC8xNrQSK0C/view?usp=sharing)
 Requires GPU with 4GB of RAM
