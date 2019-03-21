@@ -1,8 +1,8 @@
-# Towards the Automation of Kidney Function Classification and Prediction Through Ultrasound-based Kidney Imaging Using Deep Learning
+# Automation of the Kidney Function Prediction and Classification Through Ultrasound-based Kidney Imaging Using Deep Learning
 
 
 ## Prediction module
-This repository contains the code of the prediction model used in the submitted paper **Towards the Automation of Kidney Function Classification and Prediction Through Ultrasound-based Kidney Imaging Using Deep Learning**.
+This repository contains the code of the prediction model used in the paper **Automation of the Kidney Function Prediction and Classification Through Ultrasound-based Kidney Imaging Using Deep Learning**. The paper is accepted by npj Digital Medicine.
 The propsed automated system ensembles 10 trained models to predict estimated glomerular filtration rate (eGFR), and 10 trained gradient-boosted tree models to classify CKD stage.
 Go to [project blog post](https://spreadwyvern.github.io/projects/kidney/egfr/) for more information.
 
@@ -68,7 +68,7 @@ python3 predict.py
 [![Video](GUI.jpg)](https://drive.google.com/file/d/1ZA_Six_tb08KlZSlzHtbEbx7K01fn_xA/preview)
 
 ### Windows distribution
-Executable application for Windows environment. The full model version utilizes the 10-model-ensemble model used in our paper, it requires a nVidia GPU with 4GB VRAM. There is also a lite version with 5-model ensemble which requires 2GB VRAM, suitable for entry-level GPUs, yet at a cost of performance.
+Executable application for Windows environment. The full model version utilizes the 10-model-ensemble model used in our paper, it requires a GPU with 4GB VRAM. There is also a lite version with 5-model ensemble which requires 2GB VRAM, suitable for entry-level GPUs, yet at a cost of performance.
 #### Usage
 Dowload the file below and extract. Execute 'RenalFnXNet.exe'.
 
