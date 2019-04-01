@@ -1,4 +1,4 @@
-[RenalFnXNet](/ico/ico_win_background.png)
+![RenalFnXNet](/ico/ico_win_background.png)
 # Automation of the Kidney Function Prediction and Classification Through Ultrasound-based Kidney Imaging Using Deep Learning
 
 
