@@ -73,7 +73,7 @@ Executable application for Windows environment. The full model version utilizes 
 #### Usage
 Dowload the file below and extract. Execute 'RenalFnXNet.exe'.
 
-[Full model version](https://drive.google.com/file/d/1Z8sPhdyFDz90-AZOTdenYmC8xNrQSK0C/view?usp=sharing)
+[Full model version](https://drive.google.com/file/d/1k47IlFHKHyyCb2N654M3wfXLP9lx8kp6/view?usp=sharing)
 Requires GPU with 4GB of RAM
 
 [Lite version with 5-model ensembling](https://drive.google.com/file/d/1ZCcpfp17kTvy3AVVxPYp78C-gHUk-jUG/view?usp=sharing)
